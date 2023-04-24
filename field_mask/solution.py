@@ -16,7 +16,7 @@ class Validate():
             bool: Binário que representa a validação ou não da string de entrada
         """
         # define a regra da expressão regular
-        expression = r"^[A-Z][a-z]+(\s[A-Z][a-z]+)?\s[A-Z][a-z]+$"
+        expression = r"^([A-Z][a-z]+)(\s[A-Z][a-z]+)?\s([A-Z][a-z]+)$"
         # compila a regra e atribui a uma variável
         pattern = re.compile(expression)
         # Verifica se a entrada não corresponde a regra da expressão
@@ -25,15 +25,33 @@ class Validate():
         return True        
 
     def email(self, input:str) -> bool:
-        pass
+        # define a regra da expressão regular
+        expression = r"^([a-z]+)@([a-z]+)\.(com\.br|br)$"
+        # compila a regra e atribui a uma variável
+        pattern = re.compile(expression)
+        # Verifica se a entrada não corresponde a regra da expressão
+        if pattern.match(input) == None:
+            return False
+        return True      
 
 if __name__ == "__main__":
     # Name tests
+    print(f"{10*'-'}Name Tests{10*'-'}")
     mask = Validate()
-    name_inputs = ["Yoshi Sauro", "Yoshi silva Sauro", "Ada Lovel@ce", "Alan Turing", "A1an # Turing", "Alan Mathison Turing"]
+    name_inputs = ["Ada Lovelace", "1Alan", "Alan Turing", "Alan", "Stephen Cole Kleene", "A1an", "A1an Turing", "Alan turing", "Yoshi Sauro"]
     for v in name_inputs:
         r = mask.first_mid_last_name(v)
-        print(r)
-
+        print(v, "--", r)
+    print(f"{30*'-'}\n")
+    
     # Email tests
+    print(f"{10*'-'}Email Tests{10*'-'}")
+    email_inputs = ["a@a.br", "divulga@ufpa.br", "a@a.com.br", "@", "a@.br", "@a.br", "T@teste.br", "a@A.com.br", "sauros@com.br"]
+    for v in email_inputs:
+      r = mask.email(v)
+      print(v, "--", r)
+    print(f"{30*'-'}")
+
+    # passwords tests
+    
     
