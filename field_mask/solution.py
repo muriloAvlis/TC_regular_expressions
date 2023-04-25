@@ -6,33 +6,53 @@ class Validate():
 
     def first_mid_last_name(self, input:str) -> bool:
         """
-        Função que verifica se a string de entrada corresponde a
-        regra da expressão regular {Nome Nome_do_meio Sobrenome},
+        Função que verifica se a string de entrada corresponde 
+        a expressão regular com as regras {Nome Nome_do_meio Sobrenome},
         retornando True caso corresponda ou False caso não corresponda.
 
         Parameters:
             input (str): uma string que representa o nome de entrada
         Returns:
-            bool: Binário que representa a validação ou não da string de entrada
+            bool: Binário que representa a validação ou não do nome de entrada
         """
-        # define a regra da expressão regular
+        # define as regras da expressão regular
         expression = r"^([A-Z][a-z]+)(\s[A-Z][a-z]+)?\s([A-Z][a-z]+)$"
         # compila a regra e atribui a uma variável
         pattern = re.compile(expression)
         # Verifica se a entrada não corresponde a regra da expressão
-        if pattern.match(input) == None:
+        if not pattern.match(input):
             return False
         return True        
 
     def email(self, input:str) -> bool:
-        # define a regra da expressão regular
+        """
+        Função que verifica se a string de entrada corresponde a expressão
+        regular com as regras {somename@somedomain(.com.br|.br)}, retornando
+        True caso corresponda ou False caso não corresponda.
+
+        Parameters:
+            input (str): uma string que representa o email de entrada
+        Returns:
+            bool: Binário que representa a validação ou não do email de entrada
+        """
+        # define as regras da expressão regular
         expression = r"^([a-z]+)@([a-z]+)\.(com\.br|br)$"
         # compila a regra e atribui a uma variável
         pattern = re.compile(expression)
         # Verifica se a entrada não corresponde a regra da expressão
-        if pattern.match(input) == None:
+        if not pattern.match(input):
             return False
         return True      
+    
+    def passwd(self, input:str) -> bool:
+        # define as regras da expressão regular
+        expression = r"^(([a-z]*)([A-Z]+)([0-9]+)){8}$"
+        # compila a regra e atribui a uma variável
+        pattern = re.compile(expression)
+        # Verifica se a entrada não corresponde a regra da expressão
+        if not pattern.match(input):
+            return False
+        return True 
 
 if __name__ == "__main__":
     # Name tests
@@ -53,5 +73,9 @@ if __name__ == "__main__":
     print(f"{30*'-'}")
 
     # passwords tests
-    
-    
+    print(f"{10*'-'}Password Tests{10*'-'}")
+    passwd_inputs = ["a@a.br", "divulga@ufpa.br", "a@a.com.br", "@", "a@.br", "@a.br", "T@teste.br", "a@A.com.br", "sauros@com.br"]
+    for v in passwd_inputs:
+      r = mask.email(v)
+      print(v, "--", r)
+    print(f"{30*'-'}")
