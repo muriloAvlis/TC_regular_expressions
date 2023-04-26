@@ -6,7 +6,7 @@ class Mask():
     def __init__(self) -> None:
         pass
 
-    def first_mid_last_name(self, input: str) -> bool:
+    def first_mid_last_name(self, input) -> bool:
         """
         Função que verifica se a string de entrada corresponde
         a expressão regular com as regras {Nome Nome_do_meio Sobrenome},
@@ -19,14 +19,12 @@ class Mask():
         """
         # define as regras da expressão regular
         expression = r"^([A-Z][a-z]+)(\s[A-Z][a-z]+)?\s([A-Z][a-z]+)$"
-        # compila a regra e atribui a uma variável
-        pattern = re.compile(expression)
-        # Verifica se a entrada não corresponde a regra da expressão
-        if not pattern.match(input):
-            return False
-        return True
+        # chama função de validação da entrada com a expressão
+        result = validate(expression, input)
+        # retorna o resultado da validação (true ou false)
+        return result
 
-    def email(self, input: str) -> bool:
+    def email(self, input) -> bool:
         """
         Função que verifica se a string de entrada corresponde a expressão
         regular com as regras {somename@somedomain(.com.br or .br)}, retornando
@@ -39,14 +37,12 @@ class Mask():
         """
         # define as regras da expressão regular
         expression = r"^([a-z]+)@([a-z]+)\.(com\.br|br)$"
-        # compila a regra e atribui a uma variável
-        pattern = re.compile(expression)
-        # Verifica se a entrada não corresponde a regra da expressão
-        if not pattern.match(input):
-            return False
-        return True
+        # chama função de validação da entrada com a expressão
+        result = validate(expression, input)
+        # retorna o resultado da validação (true ou false)
+        return result
 
-    def passwd(self, input: str) -> bool:
+    def passwd(self, input) -> bool:
         """
         Função que verifica se a string de entrada corresponde a expressão
         regular com as regras {a-z or (A-Z and 0-9)} | len(8), retornando
@@ -59,14 +55,12 @@ class Mask():
         """
         # define as regras da expressão regular
         expression = r"^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8}$"
-        # compila a regra e atribui a uma variável
-        pattern = re.compile(expression)
-        # Verifica se a entrada não corresponde a regra da expressão
-        if not pattern.match(input):
-            return False
-        return True
+        # chama função de validação da entrada com a expressão
+        result = validate(expression, input)
+        # retorna o resultado da validação (true ou false)
+        return result
 
-    def cpf(self, input: str) -> bool:
+    def cpf(self, input) -> bool:
         """
         Parameters:
             input (str): uma string que representa o CPF
@@ -75,14 +69,12 @@ class Mask():
         """
         # define as regras da expressão regular
         expression = r"^[0-9]{3}\.[0-9]{3}\.[0-9]{3}\-[0-9]{2}$"
-        # compila a regra e atribui a uma variável
-        pattern = re.compile(expression)
-        # Verifica se a entrada não corresponde a regra da expressão
-        if not pattern.match(input):
-            return False
-        return True
+        # chama função de validação da entrada com a expressão
+        result = validate(expression, input)
+        # retorna o resultado da validação (true ou false)
+        return result
 
-    def telephone(self, input: str) -> bool:
+    def telephone(self, input) -> bool:
         """
         Parameters:
             input (str): uma string que representa o telefone
@@ -91,14 +83,12 @@ class Mask():
         """
         # define as regras da expressão regular
         expression = r"^(\([0-9]{2}\)\s9[0-9]{4}\-?[0-9]{4}|[0-9]{2}\s9[0-9]{8})$"
-        # compila a regra e atribui a uma variável
-        pattern = re.compile(expression)
-        # Verifica se a entrada não corresponde a regra da expressão
-        if not pattern.match(input):
-            return False
-        return True
+        # chama função de validação da entrada com a expressão
+        result = validate(expression, input)
+        # retorna o resultado da validação (true ou false)
+        return result
 
-    def date_time(self, input: str) -> bool:
+    def date_time(self, input) -> bool:
         """
         Parameters:
             input (str): uma string que representa a data e hora
@@ -107,10 +97,12 @@ class Mask():
         """
         # define as regras da expressão regular
         expression = r"^[0-9]{2}\/[0-9]{2}\/[0-9]{4}\s[0-9]{2}\:[0-9]{2}\:[0-9]{2}$"
+        # chama função de validação da entrada com a expressão
         result = validate(expression, input)
+        # retorna o resultado da validação (true ou false)
         return result
 
-    def real_number(self, input: str) -> bool:
+    def real_number(self, input) -> bool:
         """
         Parameters:
             input (str): uma string que representa o número real com ou sem sinal
@@ -119,7 +111,9 @@ class Mask():
         """
         # define a expressão regular
         expression = r"^[+-]?[0-9]+(\.[0-9]+)?$"
+        # chama função de validação da entrada com a expressão
         result = validate(expression, input)
+        # retorna o resultado da validação (true ou false)
         return result
 
 
@@ -154,7 +148,7 @@ if __name__ == "__main__":
 
     # CPF tests
     print(f"{10*'-'}CPF Tests{10*'-'}")
-    cpf_inputs = ["04199988844", "041.999.244-32", "123.456.789-09", "000.000.000-00",
+    cpf_inputs = ["02199988844", "021.999.244-32", "123.456.789-09", "000.000.000-00",
                   "123.456.789-0", "111.111.11-11"]
     for v in cpf_inputs:
         r = mask.cpf(v)
@@ -181,7 +175,7 @@ if __name__ == "__main__":
 
     # Real numbers tests
     print(f"{10*'-'}Real Numbers Tests{10*'-'}")
-    inputs = ["-25.467", "1", "-1", "+1", "64.2", "1.", "2.", "+64,2"]
+    inputs = ["-25.467", "1", "-1", "+1", "64.2", "1.", ".2", "+64,2"]
     for v in inputs:
         r = mask.real_number(v)
         print(v, "--", r)

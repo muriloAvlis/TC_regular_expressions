@@ -6,13 +6,13 @@ Repositório feito para implementação do trabalho de teoria da computação en
 
 - Python3 (3.10+)
 
-## Problemas 
+## Problemas
 
-### Q1 - [O Problema da Formatação de Campos](field_mask/)
+### Q1 - [O Problema da Formatação de Campos](src/fields_mask.py)
 
 Explicação resumida do problema
 
-### Q2 - [O Problema dos Arranjos Familiares](familiar_arrangements/)
+### Q2 - [O Problema dos Arranjos Familiares](src/familiar_arrangements.py)
 
 Explicação resumida do problema
 
@@ -27,5 +27,5 @@ python3 setup install.py
 Para verificar a solução implementada execute o seguinte comando no terminal.
 
 ```bash
-python3 solution.py
+python3 main.py
 ```
