@@ -64,7 +64,7 @@ class Mask():
         Parameters:
             input (str): uma string que representa o CPF
         Returns:
-            bool: Binário que representa a validação ou não da senha
+            bool: Binário que representa a validação ou não do CPF
         """
         # define as regras da expressão regular
         expression = r"^[0-9]{3}\.[0-9]{3}\.[0-9]{3}\-[0-9]{2}$"
@@ -78,7 +78,7 @@ class Mask():
         Parameters:
             input (str): uma string que representa o telefone
         Returns:
-            bool: Binário que representa a validação ou não da senha
+            bool: Binário que representa a validação ou não do telefone
         """
         # define as regras da expressão regular
         expression = r"^(\([0-9]{2}\)\s9[0-9]{4}\-?[0-9]{4}|[0-9]{2}\s9[0-9]{8})$"
@@ -92,7 +92,7 @@ class Mask():
         Parameters:
             input (str): uma string que representa a data e hora
         Returns:
-            bool: Binário que representa a validação ou não do número
+            bool: Binário que representa a validação ou não da entrada
         """
         # define as regras da expressão regular
         expression = r"^[0-9]{2}\/[0-9]{2}\/[0-9]{4}\s[0-9]{2}\:[0-9]{2}\:[0-9]{2}$"
