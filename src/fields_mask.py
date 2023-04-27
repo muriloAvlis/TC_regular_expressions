@@ -1,4 +1,3 @@
-import re
 from utils.validate import validate
 
 
