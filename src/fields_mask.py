@@ -120,45 +120,45 @@ if __name__ == "__main__":
     # Name tests
     print(f"{10*'-'}Name Tests{10*'-'}")
     mask = Mask()
-    name_inputs = ["Ada Lovelace", "1Alan", "Alan Turing", "Alan",
-                   "Stephen Cole Kleene", "A1an", "A1an Turing", "Alan turing", "Yoshi Sauro"]
-    for v in name_inputs:
+    inputs = ["Ada Lovelace", "1Alan", "Alan Turing", "Alan",
+              "Stephen Cole Kleene", "A1an", "A1an Turing", "Alan turing", "Yoshi Sauro"]
+    for v in inputs:
         r = mask.first_mid_last_name(v)
         print(v, "--", r)
     print(f"{30*'-'}\n")
 
     # Email tests
     print(f"{10*'-'}Email Tests{10*'-'}")
-    email_inputs = ["a@a.br", "divulga@ufpa.br", "a@a.com.br", "@",
-                    "a@.br", "@a.br", "T@teste.br", "a@A.com.br", "sauros@com.br"]
-    for v in email_inputs:
+    inputs = ["a@a.br", "divulga@ufpa.br", "a@a.com.br", "@",
+              "a@.br", "@a.br", "T@teste.br", "a@A.com.br", "sauros@com.br"]
+    for v in inputs:
         r = mask.email(v)
         print(v, "--", r)
     print(f"{31*'-'}\n")
 
     # passwords tests
     print(f"{10*'-'}Password Tests{10*'-'}")
-    passwd_inputs = ["518R2r5e", "F123456A", "1234567T", "ropsSoq0",
-                     "F1234567A", "abcdefgH", "1234567HI"]
-    for v in passwd_inputs:
+    inputs = ["518R2r5e", "F123456A", "1234567T", "ropsSoq0",
+              "F1234567A", "abcdefgH", "1234567HI"]
+    for v in inputs:
         r = mask.passwd(v)
         print(v, "--", r)
     print(f"{34*'-'}\n")
 
     # CPF tests
     print(f"{10*'-'}CPF Tests{10*'-'}")
-    cpf_inputs = ["02199988844", "021.999.244-32", "123.456.789-09", "000.000.000-00",
-                  "123.456.789-0", "111.111.11-11"]
-    for v in cpf_inputs:
+    inputs = ["02199988844", "021.999.244-32", "123.456.789-09", "000.000.000-00",
+              "123.456.789-0", "111.111.11-11"]
+    for v in inputs:
         r = mask.cpf(v)
         print(v, "--", r)
     print(f"{33*'-'}\n")
 
     # Telephone tests
     print(f"{10*'-'}Telephone Tests{10*'-'}")
-    telephone_inputs = ["(91) 99999-9999", "(91) 999999999",
-                        "91 999999999", "(91) 59999-9999", "99 99999-9999", "(94)95555-5555"]
-    for v in telephone_inputs:
+    inputs = ["(91) 99999-9999", "(91) 999999999",
+              "91 999999999", "(91) 59999-9999", "99 99999-9999", "(94)95555-5555"]
+    for v in inputs:
         r = mask.telephone(v)
         print(v, "--", r)
     print(f"{35*'-'}\n")

@@ -20,14 +20,32 @@ class Family():
         # retorna o resultado da validação (true ou false)
         return result
 
+    def b(self, input) -> bool:
+        pass
+
+    def c(self, input) -> bool:
+        pass
+
+    def d(self, input) -> bool:
+        pass
+
+    def e(self, input) -> bool:
+        pass
+
+    def f(self, input) -> bool:
+        pass
+
+    def g(self, input) -> bool:
+        pass
+
 
 if __name__ == "__main__":
     # a tests
     lines = f"{10*'-'}A-Family Tests{10*'-'}"
     print(lines)
     mask = Family()
-    name_inputs = ["MHmm", "HMhmm", "MHhmhm", "MHm", ""]
-    for v in name_inputs:
+    inputs = ["MHmm", "HMhmm", "MHhmhm", "MHm", "", "HM", "MH"]
+    for v in inputs:
         r = mask.a(v)
         print(v, "--", r)
     print(len(lines) * "-")
