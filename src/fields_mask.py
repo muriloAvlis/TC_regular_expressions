@@ -114,6 +114,7 @@ class FieldMask():
 
 
 if __name__ == "__main__":
+    # caso o arquivo seja executado diretamente
     from utils.validate import validate
 
     # Name tests
@@ -179,4 +180,5 @@ if __name__ == "__main__":
         print(v, "--", r)
     print(f"{38*'-'}")
 else:
+    # caso o arquivo seja executado pelo main.py
     from src.utils.validate import validate

@@ -107,7 +107,9 @@ class Family():
 
 
 if __name__ == "__main__":
+    # caso o arquivo seja executado diretamente
     from utils.validate import validate
+
     # a tests
     lines = f"{10*'-'}A-Family Tests{10*'-'}"
     print(lines)
@@ -185,4 +187,5 @@ if __name__ == "__main__":
     #     print(v, "--", r)
     # print(len(lines) * "-")
 else:
+    # caso o arquivo seja executado pelo main.py
     from src.utils.validate import validate
