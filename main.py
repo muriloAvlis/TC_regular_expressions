@@ -100,20 +100,20 @@ def cli_app():
         case "2":
             methods = {"1": "a", "2": "b", "3": "c",
                          "4": "d", "5": "e", "6":"f", "7": "g"}
-            # Menu problema das máscaras
+            # Exibe menu problema dos arranjos familiares
             menus(3)
             option = input("Digite a operação desejada: ").strip()
 
             # Verifica se a variável existe e foi atribuido um valor a ela
             if 'option' in locals() and option is not None:
                 clear() # limpa terminal para o próximo menu
-                # Menu voltar para o início
+                # Volta para o início
                 if option == "8":
                     cli_app()
-                # Menu de saída
+                # Sai do programa
                 elif option == "0":
                     exit()
-                # Verifica se a opção digita corresponde a um método/operação da Classe FieldMask
+                # Verifica se a opção digita corresponde a um método/operação da Classe Family()
                 elif option in methods.keys() and hasattr(Family(), methods[option]):
                     # obtém o método para utilização
                     validator = getattr(Family(), methods[option])
