@@ -10,17 +10,11 @@ Repositório feito para implementação do trabalho de teoria da computação en
 
 ### Q1 - [O Problema da Formatação de Campos](src/fields_mask.py)
 
-Explicação resumida do problema
+<!-- Explicação resumida do problema -->
 
 ### Q2 - [O Problema dos Arranjos Familiares](src/familiar_arrangements.py)
 
-Explicação resumida do problema
-
-<!-- ## Instalação do Projeto
-
-```bash
-python3 setup install.py
-``` -->
+<!-- Explicação resumida do problema -->
 
 ## Verificando as Soluções
 
