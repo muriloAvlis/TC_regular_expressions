@@ -68,13 +68,13 @@ def cli_app():
             # Verifica se a variável existe e foi atribuido um valor a ela
             if 'option' in locals() and option is not None:
                 clear() # limpa terminal para o próximo menu
-                # Menu voltar para o início
                 if option == "8":
+                    # Volta para o início
                     cli_app()
-                # Menu de saída
                 elif option == "0":
+                    # Sai do programa
                     exit()
-                # Verifica se a opção digita corresponde a um método/operação da Classe FieldMask
+                # Verifica se a opção digita corresponde a um método/operação da Classe FieldMask()
                 elif option in methods.keys() and hasattr(FieldMask(), methods[option]):
                     # obtém o método para utilização
                     validator = getattr(FieldMask(), methods[option])
@@ -107,11 +107,11 @@ def cli_app():
             # Verifica se a variável existe e foi atribuido um valor a ela
             if 'option' in locals() and option is not None:
                 clear() # limpa terminal para o próximo menu
-                # Volta para o início
                 if option == "8":
+                    # Volta para o início
                     cli_app()
-                # Sai do programa
                 elif option == "0":
+                    # Sai do programa
                     exit()
                 # Verifica se a opção digita corresponde a um método/operação da Classe Family()
                 elif option in methods.keys() and hasattr(Family(), methods[option]):
