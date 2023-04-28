@@ -1,14 +1,11 @@
-from utils.validate import validate
-
-
-class Mask():
+class FieldMask():
     def __init__(self) -> None:
         pass
 
     def first_mid_last_name(self, input) -> bool:
         """
         Função que verifica se a string de entrada corresponde
-        a expressão regular com as regras {Nome Nome_do_meio Sobrenome},
+        a expressão regular com as regras {Nome Nome_do_meio? Sobrenome},
         retornando True caso corresponda ou False caso não corresponda.
 
         Parameters:
@@ -117,9 +114,11 @@ class Mask():
 
 
 if __name__ == "__main__":
+    from utils.validate import validate
+
     # Name tests
     print(f"{10*'-'}Name Tests{10*'-'}")
-    mask = Mask()
+    mask = FieldMask()
     inputs = ["Ada Lovelace", "1Alan", "Alan Turing", "Alan",
               "Stephen Cole Kleene", "A1an", "A1an Turing", "Alan turing", "Yoshi Sauro"]
     for v in inputs:
@@ -179,3 +178,5 @@ if __name__ == "__main__":
         r = mask.real_number(v)
         print(v, "--", r)
     print(f"{38*'-'}")
+else:
+    from src.utils.validate import validate

@@ -1,4 +1,4 @@
-from utils.validate import validate
+from src.utils.validate import validate
 
 
 class Family():
