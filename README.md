@@ -6,7 +6,7 @@ Repositório feito para implementação do trabalho de teoria da computação en
 
 - Python3 (3.10+)
 
-## Problemas
+## Soluções
 
 ### Q1 - [O Problema da Formatação de Campos](src/fields_mask.py)
 
@@ -16,7 +16,7 @@ Repositório feito para implementação do trabalho de teoria da computação en
 
 <!-- Explicação resumida do problema -->
 
-## Verificando as Soluções
+## Executando as Soluções
 
 Para verificar as soluções implementadas execute os seguintes comando no terminal.
 
