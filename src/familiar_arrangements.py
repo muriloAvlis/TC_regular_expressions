@@ -1,6 +1,3 @@
-from src.utils.validate import validate
-
-
 class Family():
     def a(self, input) -> bool:
         """
@@ -110,6 +107,7 @@ class Family():
 
 
 if __name__ == "__main__":
+    from utils.validate import validate
     # a tests
     lines = f"{10*'-'}A-Family Tests{10*'-'}"
     print(lines)
@@ -186,3 +184,5 @@ if __name__ == "__main__":
     #     r = family_structure.g(v, x, y)
     #     print(v, "--", r)
     # print(len(lines) * "-")
+else:
+    from src.utils.validate import validate
