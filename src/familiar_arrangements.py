@@ -32,7 +32,7 @@ class Family():
             bool: Binário que representa a validação ou não da entrada
         """
         # define as regras da expressão regular
-        expression = r"^(?:[^m]*m[^m]*)*[hmHM]+(?:[^m]*m[^m]*)*$"
+        expression = r"^(?:[^m]*m[^m]m)(HM|MH)(?:[hm]m){1,2}[hm]$"
         # chama função de validação da entrada com a expressão
         result = validate(expression, input)
         # retorna o resultado da validação (true ou false)
@@ -102,7 +102,7 @@ class Family():
             bool: Binário que representa a validação ou não da entrada
         """
         # define as regras da expressão regular
-        expression = f"^(?![MH]*hhh.*)[HM]{{{x},{y}}}[hm]*$"
+        expression = f"^(?![MH]*hhh)[HM]{{{x},{y}}}[hm]*$"
         # chama função de validação da entrada com a expressão
         result = validate(expression, input)
         # retorna o resultado da validação (true ou false)
@@ -131,58 +131,58 @@ if __name__ == "__main__":
         print(v, "--", r)
     print(len(lines) * "-")
 
-    # c tests
-    lines = f"{10*'-'}C-Family Tests{10*'-'}"
-    print(lines)
-    family_structure = Family()
-    inputs = ["MHh", "HMm", "HMmh", "HMmmmh", "HMmhmhmh", "MHmhhhm", "HM"]
-    for v in inputs:
-        r = family_structure.c(v)
-        print(v, "--", r)
-    print(len(lines) * "-")
+    # # c tests
+    # lines = f"{10*'-'}C-Family Tests{10*'-'}"
+    # print(lines)
+    # family_structure = Family()
+    # inputs = ["MHh", "HMm", "HMmh", "HMmmmh", "HMmhmhmh", "MHmhhhm", "HM"]
+    # for v in inputs:
+    #     r = family_structure.c(v)
+    #     print(v, "--", r)
+    # print(len(lines) * "-")
 
-    # d tests
-    lines = f"{10*'-'}D-Family Tests{10*'-'}"
-    print(lines)
-    family_structure = Family()
-    inputs = ["MMhmmmmh", "HHmhhhhm", "MMmh",
-              "HHmhhhm", "MMhmhhhh", "MMhmhmhmhmhmmh"]
-    for v in inputs:
-        r = family_structure.d(v)
-        print(v, "--", r)
-    print(len(lines) * "-")
+    # # d tests
+    # lines = f"{10*'-'}D-Family Tests{10*'-'}"
+    # print(lines)
+    # family_structure = Family()
+    # inputs = ["MMhmmmmh", "HHmhhhhm", "MMmh",
+    #           "HHmhhhm", "MMhmhhhh", "MMhmhmhmhmhmmh"]
+    # for v in inputs:
+    #     r = family_structure.d(v)
+    #     print(v, "--", r)
+    # print(len(lines) * "-")
 
-    # e tests
-    lines = f"{10*'-'}E-Family Tests{10*'-'}"
-    print(lines)
-    family_structure = Family()
-    inputs = ["MMhmhmhm", "HHmhmhm", "MMhmmh",
-              "HHmmhmh", "MMhm"]
-    for v in inputs:
-        r = family_structure.e(v)
-        print(v, "--", r)
-    print(len(lines) * "-")
+    # # e tests
+    # lines = f"{10*'-'}E-Family Tests{10*'-'}"
+    # print(lines)
+    # family_structure = Family()
+    # inputs = ["MMhmhmhm", "HHmhmhm", "MMhmmh",
+    #           "HHmmhmh", "MMhm"]
+    # for v in inputs:
+    #     r = family_structure.e(v)
+    #     print(v, "--", r)
+    # print(len(lines) * "-")
 
-    # f tests
-    lines = f"{10*'-'}F-Family Tests{10*'-'}"
-    print(lines)
-    family_structure = Family()
-    inputs = ["MM", "HH", "MMmhmhh",
-              "HHhmhm", "MMmmhhm", "MMhmmh"]
-    for v in inputs:
-        r = family_structure.f(v)
-        print(v, "--", r)
-    print(len(lines) * "-")
+    # # f tests
+    # lines = f"{10*'-'}F-Family Tests{10*'-'}"
+    # print(lines)
+    # family_structure = Family()
+    # inputs = ["MM", "HH", "MMmhmhh",
+    #           "HHhmhm", "MMmmhhm", "MMhmmh"]
+    # for v in inputs:
+    #     r = family_structure.f(v)
+    #     print(v, "--", r)
+    # print(len(lines) * "-")
 
-    # g tests
-    lines = f"{10*'-'}G-Family Tests{10*'-'}"
-    print(lines)
-    family_structure = Family()
-    # limites do arranjo
-    x, y = 2, 4
-    inputs = ["M", "HH", "MMMm",
-              "MHhhhm", "MHHMmhhh", "MMmmhhh"]
-    for v in inputs:
-        r = family_structure.g(v, x, y)
-        print(v, "--", r)
-    print(len(lines) * "-")
+    # # g tests
+    # lines = f"{10*'-'}G-Family Tests{10*'-'}"
+    # print(lines)
+    # family_structure = Family()
+    # # limites do arranjo
+    # x, y = 2, 4
+    # inputs = ["M", "HH", "MMMm",
+    #           "MHhhhm", "MHHMmhhh", "MMmhhhm"]
+    # for v in inputs:
+    #     r = family_structure.g(v, x, y)
+    #     print(v, "--", r)
+    # print(len(lines) * "-")
